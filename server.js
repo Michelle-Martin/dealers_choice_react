@@ -1,15 +1,12 @@
-const {syncAndSeed, models, conn} = require('./db')
+const {syncAndSeed, model, Todo, conn, App} = require('./db')
 const express = require('express');
+const path = require('path')
 const { EvalDevToolModulePlugin } = require('webpack');
 const toDoApp = express();
+toDoApp.use('/dist', express.static(path.join(__dirname, 'dist')))
 toDoApp.get('/todolist', async(req,res,next)=> {
-    const html = `<html> 
-    <h1>
-    Hello
-    </h1>
-    </html>`
     try {
-        res.send(html)
+        res.send(await Todo.findAll())
     }
     catch(ex){
         console.log(ex)
@@ -17,7 +14,8 @@ toDoApp.get('/todolist', async(req,res,next)=> {
     next()
 })
 
-
+toDoApp.get('/', (req,res,next)=> 
+    res.sendFile(path.join(__dirname, 'index.html')))
 
 const init = async()=> {
     await conn.authenticate();

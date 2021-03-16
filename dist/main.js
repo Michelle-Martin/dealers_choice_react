@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\n\nconst app = document.querySelector('#app');\n\nconst Item = ({\n  item,\n  removeTask,\n  idx\n}) => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"li\", null, \" \", item, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"button\", {\n    onClick: () => removeTask(idx)\n  }, \" Delete \"));\n};\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__.Component {\n  constructor() {\n    super();\n    this.state = {\n      myItems\n    };\n    this.addTask = this.addTask.bind(this);\n    this.removeTask = this.removeTask.bind(this);\n  }\n\n  addTask() {\n    this.setState({\n      myItems: [...myItems, \"Car Wash\"]\n    }); //    this.myItems.push(newTask)\n  }\n\n  removeTask(idx) {\n    const myItems = this.state.myItems.filter((_, _idx) => _idx !== idx);\n    this.setState({\n      myItems\n    });\n  }\n\n  render() {\n    const {\n      myItems\n    } = this.state;\n    const {\n      addTask,\n      removeTask\n    } = this;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h2\", null, \" You have \", myItems.length, \" items to complete! \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", null, myItems.map((item, idx) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {\n      key: idx,\n      idx: idx,\n      removeTask: removeTask,\n      item: item\n    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"button\", {\n      onClick: addTask\n    }, \" Add Task \"));\n  }\n\n}\n\nconst myItems = [\"Walk the Dog\", \"Grocery Shop\", \"Pay Bills\"];\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), app);\n\n//# sourceURL=webpack://full-stack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\n\nconst app = document.querySelector('#app');\n\nconst Item = ({\n  item,\n  removeTask,\n  idx\n}) => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"li\", null, \" \", item, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"button\", {\n    onClick: () => removeTask(idx)\n  }, \" Delete \"));\n};\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__.Component {\n  constructor() {\n    super();\n    this.state = {\n      myItems\n    };\n    this.addTask = this.addTask.bind(this);\n    this.removeTask = this.removeTask.bind(this);\n  }\n\n  addTask() {\n    this.setState({\n      myItems: [...myItems, \"Car Wash\"]\n    }); //    this.myItems.push(newTask)\n  }\n\n  removeTask(idx) {\n    const myItems = this.state.myItems.filter((_, _idx) => _idx !== idx);\n    this.setState({\n      myItems\n    });\n  }\n\n  render() {\n    const {\n      myItems\n    } = this.state;\n    const {\n      addTask,\n      removeTask\n    } = this;\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h2\", null, \" You have \", myItems.length, \" items to complete! \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", null, myItems.map((item, idx) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {\n      key: idx,\n      idx: idx,\n      removeTask: removeTask,\n      item: item\n    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"button\", {\n      onClick: addTask\n    }, \" Add Task \"));\n  }\n\n}\n\nconst myItems = [\"Walk the Dog\", \"Grocery Shop\", \"Pay Bills\"];\nreact_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(App, null), app);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);\n\n//# sourceURL=webpack://full-stack-demo/./src/index.js?");
 
 /***/ }),
 
@@ -137,6 +137,23 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports

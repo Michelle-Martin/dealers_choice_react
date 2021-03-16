@@ -34,9 +34,10 @@ const [task1, task2, task3] = await Promise.all([
 // init()
 
 module.exports = {
-    models: {
+    model: {
         Todo
     }, 
+    Todo,
     conn, 
     syncAndSeed
 }

@@ -47,5 +47,6 @@ const Item = ({item, removeTask, idx})=> {
    }}
 const myItems = ["Walk the Dog","Grocery Shop","Pay Bills"];
 ReactDOM.render(<App />, app);
+export default App
 
   
